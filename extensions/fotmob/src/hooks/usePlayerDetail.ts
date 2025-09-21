@@ -8,9 +8,7 @@ import { buildPlayerImageUrl } from "@/utils/url-builder";
 async function getCommonPlayerNamesForId(playerId: string): Promise<string[]> {
   // Map of known problematic player IDs to their names
   const knownPlayers: Record<string, string[]> = {
-    "169200": ["Kevin De Bruyne", "De Bruyne", "Kevin"],
-    "1113903": ["Player Name"], // Add the actual name if known
-    // Add more mappings as needed
+    "1113903": ["Player Name"],
   };
 
   // Return known names for this ID, or try some generic approaches

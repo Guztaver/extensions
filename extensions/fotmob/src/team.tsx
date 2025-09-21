@@ -2,7 +2,11 @@ import type { LaunchProps } from "@raycast/api";
 import { Icon, List, Toast, showToast, useNavigation } from "@raycast/api";
 import TeamView from "@/views/team/TeamView";
 
-export default function Command(props: LaunchProps<{ arguments: Arguments.Team }>) {
+interface TeamArguments {
+  teamId: string;
+}
+
+export default function Command(props: LaunchProps<{ arguments: TeamArguments }>) {
   const { teamId } = props.arguments;
 
   const { pop } = useNavigation();
