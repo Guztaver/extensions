@@ -100,6 +100,9 @@ If the player doesn't exist on FotMob, they might be available on other football
   }
 
   const generateMarkdown = () => {
+    const isLimitedData =
+      playerDetail.name === `Player ${playerDetail.id}` || playerDetail.meta?.position === "Unknown";
+
     let markdown = `# ${playerDetail.name}\n\n`;
 
     // Player image
@@ -120,17 +123,45 @@ If the player doesn't exist on FotMob, they might be available on other football
     }
 
     // Data Limitations Notice
+    if (isLimitedData) {
+      markdown += `---\n\n`;
+      markdown += `## ℹ️ Limited Player Data\n\n`;
+      markdown += `This player exists on FotMob but has limited information available through the API. This is common for:\n\n`;
+      markdown += `• Players from lower leagues\n`;
+      markdown += `• Youth or reserve team players\n`;
+      markdown += `• Recently transferred players\n`;
+      markdown += `• Players with updated profiles\n\n`;
+      markdown += `**💡 Tip:** Use the "Open in Browser" button below to view complete player information on the FotMob website.\n\n`;
+      markdown += `**🔍 Alternative:** Try searching for the player by name using the "Search Players" command for better results.\n\n`;
+    }
+
     return markdown;
   };
+
+  const isLimitedData = playerDetail.name === `Player ${playerDetail.id}` || playerDetail.meta?.position === "Unknown";
 
   return (
     <Detail
       isLoading={isLoading}
       markdown={generateMarkdown()}
-      navigationTitle={playerDetail.name}
+      navigationTitle={isLimitedData ? `Player ${playerDetail.id} (Limited Data)` : playerDetail.name}
       actions={
         <ActionPanel>
           <Action.OpenInBrowser title="Open in Browser" icon={Icon.Globe} url={buildPlayerDetailUrl(playerDetail.id)} />
+          {isLimitedData && (
+            <Action
+              title="Search Players by Name"
+              icon={Icon.MagnifyingGlass}
+              shortcut={{ modifiers: ["cmd"], key: "s" }}
+              onAction={() => {
+                showToast({
+                  style: Toast.Style.Success,
+                  title: "Tip",
+                  message: "Use 'Search Players' command to find more detailed player information by name",
+                });
+              }}
+            />
+          )}
           <Action
             icon={isFavorite ? Icon.StarDisabled : Icon.Star}
             title={isFavorite ? "Remove From Favorites" : "Add To Favorites"}
