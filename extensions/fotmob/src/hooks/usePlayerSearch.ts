@@ -33,7 +33,7 @@ export function usePlayerSearch(searchText: string) {
             async (option): Promise<SearchResultItem> => ({
               type: "player",
               title: option.text.split("|")[0],
-              iamgeUrl: buildPlayerImageUrl(option.payload.id),
+              imageUrl: buildPlayerImageUrl(option.payload.id),
               subtitle: option.payload.teamName
                 ? `${option.payload.teamName} • Player ID: ${option.payload.id}`
                 : `Player ID: ${option.payload.id}`,
