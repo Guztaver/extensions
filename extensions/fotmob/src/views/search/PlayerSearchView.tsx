@@ -84,7 +84,7 @@ export default function PlayerSearchView() {
         players.map((player) => (
           <List.Item
             key={`${player.payload.id}_${player.title}`}
-            icon={player.iamgeUrl}
+            icon={player.imageUrl}
             title={player.title}
             subtitle={player.subtitle}
             accessories={player.accessories}
