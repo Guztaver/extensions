@@ -26,7 +26,7 @@ export function useTeamSearch(searchText: string) {
           async (option): Promise<SearchResultItem> => ({
             type: "team",
             title: option.text.split("|")[0],
-            iamgeUrl: buildTeamLogoUrl(option.payload.id),
+            imageUrl: buildTeamLogoUrl(option.payload.id),
             subtitle: `Team ID: ${option.payload.id}`,
             accessories: await favoriteAccessories("team", option.payload.id),
             payload: option.payload,
