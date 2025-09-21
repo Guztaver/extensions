@@ -1,5 +1,6 @@
 import { Action, ActionPanel, Icon, List, Toast, showToast } from "@raycast/api";
 import { useFavorite } from "@/hooks/useFavorite";
+import { launchPlayerCommand } from "@/utils/launcher/launchPlayerDetailCommand";
 import { launchTeamCommand } from "@/utils/launcher/launchTeamDetailCommand";
 import {
   buildLeagueDetailUrl,
@@ -95,6 +96,13 @@ export default function FavoriteView() {
             title={player.name}
             actions={
               <ActionPanel>
+                <Action
+                  icon={Icon.Person}
+                  title="Show Player Details"
+                  onAction={() => {
+                    launchPlayerCommand(player.id);
+                  }}
+                />
                 <Action.OpenInBrowser
                   icon={Icon.Globe}
                   title="Show Detail In Browser"

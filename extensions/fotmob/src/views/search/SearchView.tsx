@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import { Action, ActionPanel, Icon, List, Toast, showToast } from "@raycast/api";
 import { useFavorite } from "@/hooks/useFavorite";
 import { useSearch } from "@/hooks/useSearch";
+import { launchPlayerCommand } from "@/utils/launcher/launchPlayerDetailCommand";
 import { launchTeamCommand } from "@/utils/launcher/launchTeamDetailCommand";
 import {
   buildLeagueDetailUrl,
@@ -20,6 +21,11 @@ export default function SearchView() {
   const isFavorite = (teamId: string) => {
     const favoritedTeams = favoriteService.teams;
     return favoritedTeams.some((team) => team.id === teamId);
+  };
+
+  const isPlayerFavorite = (playerId: string) => {
+    const favoritedPlayers = favoriteService.players;
+    return favoritedPlayers.some((player) => player.id === playerId);
   };
 
   return (
@@ -83,6 +89,43 @@ export default function SearchView() {
                                 value: {
                                   id: item.payload.id,
                                   leagueId: `${item.payload.leagueId}`,
+                                  name: item.title,
+                                },
+                              });
+                              showToast({
+                                style: Toast.Style.Success,
+                                title: "Added to Favorites",
+                              });
+                            }}
+                          />
+                        </Fragment>
+                      )}
+                      {item.type === "player" && (
+                        <Fragment>
+                          <Action
+                            icon={Icon.Person}
+                            title="Show Player Details"
+                            onAction={() => {
+                              launchPlayerCommand(item.payload.id);
+                            }}
+                          />
+                          <Action
+                            icon={isPlayerFavorite(item.payload.id) ? Icon.StarDisabled : Icon.Star}
+                            title={isPlayerFavorite(item.payload.id) ? "Remove From Favorites" : "Add To Favorites"}
+                            onAction={async () => {
+                              if (isPlayerFavorite(item.payload.id)) {
+                                await favoriteService.removeItems("player", item.payload.id);
+                                showToast({
+                                  style: Toast.Style.Success,
+                                  title: "Removed from Favorites",
+                                });
+                                return;
+                              }
+                              await favoriteService.addItems({
+                                type: "player",
+                                value: {
+                                  id: item.payload.id,
+                                  isCoach: item.payload.isCoach || false,
                                   name: item.title,
                                 },
                               });

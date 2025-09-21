@@ -8,7 +8,7 @@ export default function Command(props: LaunchProps<{ arguments: Arguments.Team }
   const { pop } = useNavigation();
 
   // Validate teamId empty or not a number
-  if (!teamId || isNaN(Number(teamId))) {
+  if (!teamId || Number.isNaN(Number(teamId))) {
     showToast({
       title: "Team ID must be a number",
       message: "Please enter a valid team ID",
