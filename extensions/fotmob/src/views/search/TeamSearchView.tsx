@@ -80,7 +80,7 @@ export default function TeamSearchView() {
         teams.map((team) => (
           <List.Item
             key={`${team.payload.id}_${team.title}`}
-            icon={team.iamgeUrl}
+            icon={team.imageUrl}
             title={team.title}
             subtitle={team.subtitle}
             accessories={team.accessories}
