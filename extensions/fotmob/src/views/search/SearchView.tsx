@@ -44,7 +44,7 @@ export default function SearchView() {
               {section.items.map((item) => (
                 <List.Item
                   key={`${item.payload.id}_${item.title}`}
-                  icon={item.iamgeUrl}
+                  icon={item.imageUrl}
                   title={item.title}
                   subtitle={item.subtitle}
                   accessories={item.accessories}

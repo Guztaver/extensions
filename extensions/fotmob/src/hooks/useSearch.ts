@@ -29,7 +29,7 @@ export function useSearch(searchText: string) {
           async (option): Promise<SearchResultItem> => ({
             type: "team",
             title: option.text.split("|")[0],
-            iamgeUrl: buildTeamLogoUrl(option.payload.id),
+            imageUrl: buildTeamLogoUrl(option.payload.id),
             subtitle: ``,
             accessories: await favoriteAccessories("team", option.payload.id),
             payload: option.payload,
@@ -44,7 +44,7 @@ export function useSearch(searchText: string) {
           async (option): Promise<SearchResultItem> => ({
             type: "player",
             title: option.text.split("|")[0],
-            iamgeUrl: buildPlayerImageUrl(option.payload.id),
+            imageUrl: buildPlayerImageUrl(option.payload.id),
             subtitle: ``,
             accessories: (await favoriteAccessories("player", option.payload.id)).concat(
               typeof option.payload.teamId === "number" && option.payload.teamName
@@ -63,7 +63,7 @@ export function useSearch(searchText: string) {
           async (option): Promise<SearchResultItem> => ({
             type: "match",
             title: option.text.split("|")[0],
-            iamgeUrl: buildLeagueLogoUrl(option.payload.leagueId, "dark"),
+            imageUrl: buildLeagueLogoUrl(option.payload.leagueId, "dark"),
             subtitle: prettyDate(option.payload.matchDate),
             accessories: (
               [
@@ -95,7 +95,7 @@ export function useSearch(searchText: string) {
           async (option): Promise<SearchResultItem> => ({
             type: "league",
             title: option.text.split("|")[0],
-            iamgeUrl: buildLeagueLogoUrl(option.payload.id, environment.appearance),
+            imageUrl: buildLeagueLogoUrl(option.payload.id, environment.appearance),
             subtitle: ``,
             accessories: [],
             payload: option.payload,
