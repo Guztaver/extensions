@@ -29,3 +29,8 @@
 - ESLint and Prettier configuration
 - Comprehensive error handling
 - Responsive UI components
+
+## [1.0.1] - 2025-10-13
+
+- Remove cross-fetch
+- Update packages
