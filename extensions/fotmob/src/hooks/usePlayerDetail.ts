@@ -1,4 +1,3 @@
-import fetch from "cross-fetch";
 import { useCachedPromise } from "@raycast/utils";
 import type { PlayerDetailData } from "@/types/player-detail";
 import { buildPlayerImageUrl } from "@/utils/url-builder";

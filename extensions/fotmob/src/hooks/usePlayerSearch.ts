@@ -1,4 +1,3 @@
-import fetch from "cross-fetch";
 import { useRef } from "react";
 import { useCachedPromise } from "@raycast/utils";
 import type { SearchResponse, SearchResultItem } from "@/types/search";

@@ -1,4 +1,3 @@
-import fetch from "cross-fetch";
 import { useCachedPromise } from "@raycast/utils";
 import type { MatchDayResponse } from "@/types/match-day";
 import { getHeaderToken } from "@/utils/token";

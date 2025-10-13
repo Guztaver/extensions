@@ -1,4 +1,3 @@
-import fetch from "cross-fetch";
 import { useRef } from "react";
 import type { List } from "@raycast/api";
 import { environment } from "@raycast/api";
