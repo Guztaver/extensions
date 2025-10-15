@@ -217,7 +217,7 @@ export default function MatchDetailView({ matchId }: MatchDetailViewProps) {
               {favoriteService.leagues.some((league) => league.id === data.tournament.leagueId.toString()) ? (
                 <Action
                   icon={Icon.StarDisabled}
-                  title="Remove League From Favorites"
+                  title="Remove League from Favorites"
                   onAction={async () => {
                     await favoriteService.removeItems("league", data.tournament.leagueId.toString());
                     showToast({
@@ -316,7 +316,7 @@ export default function MatchDetailView({ matchId }: MatchDetailViewProps) {
                 {favoriteService.teams.some((team) => team.id === data.home.id.toString()) ? (
                   <Action
                     icon={Icon.StarDisabled}
-                    title="Remove From Favorites"
+                    title="Remove from Favorites"
                     onAction={async () => {
                       await favoriteService.removeItems("team", data.home.id.toString());
                       showToast({
@@ -381,7 +381,7 @@ export default function MatchDetailView({ matchId }: MatchDetailViewProps) {
                 {favoriteService.teams.some((team) => team.id === data.away.id.toString()) ? (
                   <Action
                     icon={Icon.StarDisabled}
-                    title="Remove From Favorites"
+                    title="Remove from Favorites"
                     onAction={async () => {
                       await favoriteService.removeItems("team", data.away.id.toString());
                       showToast({

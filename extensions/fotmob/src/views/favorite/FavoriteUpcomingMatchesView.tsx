@@ -66,7 +66,7 @@ function TeamUpcomingMatches({ team }: { team: { id: string; name: string } }) {
           <ActionPanel>
             <Action
               icon={Icon.StarDisabled}
-              title="Remove From Favorites"
+              title="Remove from Favorites"
               onAction={async () => {
                 await favoriteService.removeItems("team", team.id);
                 showToast({
@@ -98,7 +98,7 @@ function TeamUpcomingMatches({ team }: { team: { id: string; name: string } }) {
               />
               <Action
                 icon={Icon.StarDisabled}
-                title="Remove Team From Favorites"
+                title="Remove Team from Favorites"
                 onAction={async () => {
                   await favoriteService.removeItems("team", team.id);
                   showToast({

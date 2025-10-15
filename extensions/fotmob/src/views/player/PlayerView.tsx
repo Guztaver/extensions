@@ -164,7 +164,7 @@ If the player doesn't exist on FotMob, they might be available on other football
           )}
           <Action
             icon={isFavorite ? Icon.StarDisabled : Icon.Star}
-            title={isFavorite ? "Remove From Favorites" : "Add To Favorites"}
+            title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
             onAction={isFavorite ? handleRemoveFromFavorites : handleAddToFavorites}
           />
           {playerDetail.primaryTeam && (

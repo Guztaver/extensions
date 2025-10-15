@@ -74,7 +74,7 @@ export default function SearchView() {
                           />
                           <Action
                             icon={isFavorite(item.payload.id) ? Icon.StarDisabled : Icon.Star}
-                            title={isFavorite(item.payload.id) ? "Remove From Favorites" : "Add To Favorites"}
+                            title={isFavorite(item.payload.id) ? "Remove from Favorites" : "Add to Favorites"}
                             onAction={async () => {
                               if (isFavorite(item.payload.id)) {
                                 await favoriteService.removeItems("team", item.payload.id);
@@ -111,7 +111,7 @@ export default function SearchView() {
                           />
                           <Action
                             icon={isPlayerFavorite(item.payload.id) ? Icon.StarDisabled : Icon.Star}
-                            title={isPlayerFavorite(item.payload.id) ? "Remove From Favorites" : "Add To Favorites"}
+                            title={isPlayerFavorite(item.payload.id) ? "Remove from Favorites" : "Add to Favorites"}
                             onAction={async () => {
                               if (isPlayerFavorite(item.payload.id)) {
                                 await favoriteService.removeItems("player", item.payload.id);

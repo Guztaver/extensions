@@ -64,7 +64,7 @@ function TeamTableItem({ team, position, leagueId }: { team: LeagueTableTeam; po
           {isTeamFavorited ? (
             <Action
               icon={Icon.StarDisabled}
-              title="Remove Team From Favorites"
+              title="Remove Team from Favorites"
               onAction={async () => {
                 await favoriteService.removeItems("team", team.id.toString());
                 showToast({
@@ -184,7 +184,7 @@ export default function LeagueTableView({ leagueId, leagueName }: LeagueTableVie
               {isLeagueFavorited ? (
                 <Action
                   icon={Icon.StarDisabled}
-                  title="Remove League From Favorites"
+                  title="Remove League from Favorites"
                   onAction={async () => {
                     await favoriteService.removeItems("league", leagueId);
                     showToast({
@@ -239,7 +239,7 @@ export default function LeagueTableView({ leagueId, leagueName }: LeagueTableVie
               {isLeagueFavorited ? (
                 <Action
                   icon={Icon.StarDisabled}
-                  title="Remove League From Favorites"
+                  title="Remove League from Favorites"
                   onAction={async () => {
                     await favoriteService.removeItems("league", leagueId);
                     showToast({
@@ -291,7 +291,7 @@ export default function LeagueTableView({ leagueId, leagueName }: LeagueTableVie
           {isLeagueFavorited ? (
             <Action
               icon={Icon.StarDisabled}
-              title="Remove League From Favorites"
+              title="Remove League from Favorites"
               onAction={async () => {
                 await favoriteService.removeItems("league", leagueId);
                 showToast({

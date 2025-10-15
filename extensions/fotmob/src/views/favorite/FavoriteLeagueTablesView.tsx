@@ -29,7 +29,7 @@ function LeagueTableSection({ league }: { league: { id: string; name: string; co
             <Action.OpenInBrowser icon={Icon.Globe} title="View on Fotmob" url={buildLeagueDetailUrl(league.id)} />
             <Action
               icon={Icon.StarDisabled}
-              title="Remove From Favorites"
+              title="Remove from Favorites"
               onAction={async () => {
                 await favoriteService.removeItems("league", league.id);
                 showToast({
@@ -75,7 +75,7 @@ function LeagueTableSection({ league }: { league: { id: string; name: string; co
             <Action.OpenInBrowser icon={Icon.Globe} title="View on Fotmob" url={buildLeagueDetailUrl(league.id)} />
             <Action
               icon={Icon.StarDisabled}
-              title="Remove From Favorites"
+              title="Remove from Favorites"
               onAction={async () => {
                 await favoriteService.removeItems("league", league.id);
                 showToast({
@@ -143,7 +143,7 @@ function LeagueTableSection({ league }: { league: { id: string; name: string; co
                 />
                 <Action
                   icon={Icon.StarDisabled}
-                  title="Remove League From Favorites"
+                  title="Remove League from Favorites"
                   onAction={async () => {
                     await favoriteService.removeItems("league", league.id);
                     showToast({

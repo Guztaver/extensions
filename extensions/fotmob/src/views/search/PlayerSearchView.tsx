@@ -104,7 +104,7 @@ export default function PlayerSearchView() {
                 />
                 <Action
                   icon={isFavorite(player.payload.id) ? Icon.StarDisabled : Icon.Star}
-                  title={isFavorite(player.payload.id) ? "Remove From Favorites" : "Add To Favorites"}
+                  title={isFavorite(player.payload.id) ? "Remove from Favorites" : "Add to Favorites"}
                   onAction={async () => {
                     if (isFavorite(player.payload.id)) {
                       await handleRemoveFromFavorites(player.payload.id, player.title);

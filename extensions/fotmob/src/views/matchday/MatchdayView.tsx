@@ -83,7 +83,7 @@ export default function MatchdayView() {
                           {favoriteService.teams.some((team) => team.id === item.payload.id) ? (
                             <Action
                               icon={Icon.StarDisabled}
-                              title="Remove From Favorites"
+                              title="Remove from Favorites"
                               onAction={async () => {
                                 await favoriteService.removeItems("team", item.payload.id);
                                 showToast({
@@ -121,7 +121,7 @@ export default function MatchdayView() {
                         <>
                           <Action.OpenInBrowser
                             icon={Icon.Globe}
-                            title="Show Detail In Browser"
+                            title="Show Detail in Browser"
                             url={buildLeagueDetailUrl(item.payload.id)}
                           />
                           <Action.CopyToClipboard
@@ -133,7 +133,7 @@ export default function MatchdayView() {
                           {favoriteService.leagues.some((league) => league.id === item.payload.id) ? (
                             <Action
                               icon={Icon.StarDisabled}
-                              title="Remove From Favorites"
+                              title="Remove from Favorites"
                               onAction={async () => {
                                 await favoriteService.removeItems("league", item.payload.id);
                                 showToast({
@@ -171,7 +171,7 @@ export default function MatchdayView() {
                         <>
                           <Action.OpenInBrowser
                             icon={Icon.Globe}
-                            title="Show Detail In Browser"
+                            title="Show Detail in Browser"
                             url={buildPlayerDetailUrl(item.payload.id)}
                           />
                           <Action.CopyToClipboard
@@ -183,7 +183,7 @@ export default function MatchdayView() {
                           {favoriteService.players.some((player) => player.id === item.payload.id) ? (
                             <Action
                               icon={Icon.StarDisabled}
-                              title="Remove From Favorites"
+                              title="Remove from Favorites"
                               onAction={async () => {
                                 await favoriteService.removeItems("player", item.payload.id);
                                 showToast({
@@ -220,7 +220,7 @@ export default function MatchdayView() {
                       ) : (
                         <Action.OpenInBrowser
                           icon={Icon.Globe}
-                          title="Show Detail In Browser"
+                          title="Show Detail in Browser"
                           url={item.type === "match" ? buildMatchDetailUrl(item.payload.id) : ""}
                         />
                       )}

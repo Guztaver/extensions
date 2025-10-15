@@ -100,7 +100,7 @@ export default function TeamSearchView() {
                 />
                 <Action
                   icon={isFavorite(team.payload.id) ? Icon.StarDisabled : Icon.Star}
-                  title={isFavorite(team.payload.id) ? "Remove From Favorites" : "Add To Favorites"}
+                  title={isFavorite(team.payload.id) ? "Remove from Favorites" : "Add to Favorites"}
                   onAction={async () => {
                     if (isFavorite(team.payload.id)) {
                       await handleRemoveFromFavorites(team.payload.id, team.title);

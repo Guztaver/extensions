@@ -109,7 +109,7 @@ export default function TeamView({ id }: { id: string }) {
               {isTeamFavorited ? (
                 <Action
                   icon={Icon.StarDisabled}
-                  title="Remove From Favorites"
+                  title="Remove from Favorites"
                   onAction={async () => {
                     await favoriteService.removeItems("team", id);
                     showToast({
