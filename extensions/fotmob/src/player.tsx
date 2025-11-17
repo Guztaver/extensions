@@ -2,7 +2,11 @@ import type { LaunchProps } from "@raycast/api";
 import { Icon, List, Toast, showToast, useNavigation } from "@raycast/api";
 import PlayerView from "@/views/player/PlayerView";
 
-export default function Command(props: LaunchProps<{ arguments: Arguments.Player }>) {
+interface PlayerArguments {
+  playerId: string;
+}
+
+export default function Command(props: LaunchProps<{ arguments: PlayerArguments }>) {
   const { playerId } = props.arguments;
 
   const { pop } = useNavigation();

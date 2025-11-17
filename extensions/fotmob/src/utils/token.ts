@@ -7,5 +7,5 @@ export async function getHeaderToken(): Promise<Record<string, string>> {
   if (!response.ok) {
     throw new Error("Failed to fetch header token");
   }
-  return (await response).json() as Record<string, string>;
+  return (await response.json()) as Record<string, string>;
 }

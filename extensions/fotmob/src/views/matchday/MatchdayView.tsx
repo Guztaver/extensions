@@ -59,7 +59,7 @@ export default function MatchdayView() {
               {section.items.map((item) => (
                 <List.Item
                   key={item.title}
-                  icon={item.iamgeUrl}
+                  icon={item.imageUrl}
                   title={item.title}
                   subtitle={item.subtitle}
                   accessories={item.accessories}
